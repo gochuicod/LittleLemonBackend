@@ -1,6 +1,13 @@
-from django.urls import path
-from .views import index
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import index, UsersViewSet, BookingsViewSet, MenuItemsViewSet
+
+router = DefaultRouter()
+router.register(r'users', UsersViewSet, basename='user')
+router.register(r'booking/tables', BookingsViewSet, basename='table')
+router.register(r'menu-items', MenuItemsViewSet, basename='menu-item')
 
 urlpatterns = [
-  path('', index.as_view(), name='index'),
+  path('', include(router.urls)),
+  # path('', index.as_view(), name='index'),
 ]
