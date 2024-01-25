@@ -3,7 +3,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from .models import Booking, MenuItem
-from .serializers import UserSerializer, BookingSerializer, MenuSerializer
+from .serializers import UserSerializer, BookingSerializer, MenuItemSerializer
 
 # Create your views here.
 class index(TemplateView):
@@ -11,7 +11,7 @@ class index(TemplateView):
 
 class MenuItemsViewSet(ModelViewSet):
   queryset = MenuItem.objects.all()
-  serializer_class = MenuSerializer
+  serializer_class = MenuItemSerializer
   permission_classes = [IsAuthenticated]
 
 class BookingsViewSet(ModelViewSet):
