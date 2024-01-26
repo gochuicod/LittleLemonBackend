@@ -22,6 +22,16 @@ user:~$ pipenv shell
 user:~$ pipenv install
 ```
 
+#### Setup the database
+```
+mysql -u root -p
+
+mysql> create database restaurant;
+mysql> create user 'admin'@'localhost' identified by 'admin@123!'
+mysql> grant all on *.* to 'admin'@'localhost'
+mysql> flush privileges
+```
+
 #### Create a superuser
 ```
 user:~$ python manage.py createsuperuser
