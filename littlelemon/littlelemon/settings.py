@@ -83,7 +83,16 @@ DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.sqlite3',
     'NAME': BASE_DIR / 'db.sqlite3',
-  }
+  },
+  # Uncomment this if you have the need to setup MYSQL, otherwise use SQLITE3 above
+  # 'default': {
+  #   'ENGINE': 'django.db.backends.mysql',
+  #   'NAME': 'restaurant',
+  #   'USER': 'admin',
+  #   'PASSWORD': 'admin@123!',
+  #   'HOST': 'localhost',
+  #   'PORT': '3306'
+  # }
 }
 
 
