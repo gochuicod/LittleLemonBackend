@@ -4,7 +4,7 @@ from .views import index, UsersViewSet, BookingsViewSet, MenuItemsViewSet
 
 router = DefaultRouter()
 router.register(r'users', UsersViewSet, basename='user')
-router.register(r'booking/tables', BookingsViewSet, basename='table')
+router.register(r'bookings', BookingsViewSet, basename='booking')
 router.register(r'menu-items', MenuItemsViewSet, basename='menu-item')
 
 urlpatterns = [
